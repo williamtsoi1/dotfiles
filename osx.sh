@@ -20,7 +20,7 @@ running "checking homebrew install"
 brew_bin=$(which brew) 2>&1 > /dev/null
 if [[ $? != 0 ]]; then
 	action "installing homebrew"
-    ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
+    ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
     if [[ $? != 0 ]]; then
     	error "unable to install homebrew, script $0 abort!"
     	exit -1
@@ -141,14 +141,18 @@ brew tap caskroom/versions > /dev/null 2>&1
 
 # cloud storage
 #require_cask amazon-cloud-drive
-require_cask box-sync
-#require_cask dropbox
-#require_cask evernote
+#require_cask box-sync
+require_cask dropbox
+require_cask google-drive
+require_cask evernote
 #require_cask skydrive
 
 # communication
 #require_cask adium
 require_cask slack
+require_cask hipchat
+require_cask telegram
+require_cask skype
 
 # tools
 #require_cask comicbooklover
@@ -158,16 +162,25 @@ require_cask github
 require_cask gpgtools
 require_cask ireadfast
 require_cask iterm2
-require_cask lastpass
+#require_cask lastpass
 #require_cask macvim
 require_cask sizeup
 #require_cask simple-comic
 #require_cask sketchup
-require_cask sublime-text
+#require_cask sublime-text
 require_cask the-unarchiver
 #require_cask transmission
 require_cask vlc
 require_cask xquartz
+
+# William's mods
+require_cask atom
+require_cask 1password
+require_cask sourcetree
+require_cask spotify
+require_cask spotify-notifications
+require_cask webstorm
+require_cask steam
 
 # development browsers
 require_cask breach
@@ -179,6 +192,8 @@ require_cask torbrowser
 
 # virtal machines
 require_cask virtualbox
+require_cask vmware-fusion
+
 # chef-dk, berkshelf, etc
 require_cask chefdk
 # vagrant for running dev environments using docker images
@@ -393,8 +408,8 @@ defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad TrackpadRightC
 defaults -currentHost write NSGlobalDomain com.apple.trackpad.trackpadCornerClickBehavior -int 1
 defaults -currentHost write NSGlobalDomain com.apple.trackpad.enableSecondaryClick -bool true;ok
 
-running "Disable “natural” (Lion-style) scrolling"
-defaults write NSGlobalDomain com.apple.swipescrolldirection -bool false;ok
+running "Enable “natural” (Lion-style) scrolling"
+defaults write NSGlobalDomain com.apple.swipescrolldirection -bool true;ok
 
 running "Increase sound quality for Bluetooth headphones/headsets"
 defaults write com.apple.BluetoothAudioAgent "Apple Bitpool Min (editable)" -int 40;ok
@@ -573,8 +588,12 @@ defaults write com.apple.dock autohide-delay -float 0;ok
 running "Remove the animation when hiding/showing the Dock"
 defaults write com.apple.dock autohide-time-modifier -float 0;ok
 
-running "Automatically hide and show the Dock"
-defaults write com.apple.dock autohide -bool true;ok
+running "Setting magnification for Dock"
+defaults write com.apple.dock largesize -float 96
+
+running "Disabling automatically hide and show the Dock"
+#defaults write com.apple.dock autohide -bool true;ok
+defaults write com.apple.dock autohide -bool false;ok
 
 running "Make Dock icons of hidden applications translucent"
 defaults write com.apple.dock showhidden -bool true;ok
