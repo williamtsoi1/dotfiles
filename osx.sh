@@ -158,9 +158,9 @@ require_cask skype
 #require_cask comicbooklover
 require_cask diffmerge
 #require_cask flash-player
-require_cask github
+#require_cask github
 require_cask gpgtools
-require_cask ireadfast
+#require_cask ireadfast
 require_cask iterm2
 #require_cask lastpass
 #require_cask macvim
@@ -181,6 +181,7 @@ require_cask spotify
 require_cask spotify-notifications
 require_cask webstorm
 require_cask steam
+require_cask utorrent
 
 # development browsers
 require_cask breach
