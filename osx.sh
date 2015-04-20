@@ -182,6 +182,9 @@ require_cask spotify-notifications
 require_cask webstorm
 require_cask steam
 require_cask utorrent
+# needed by webstorm. Old Java version?
+require_cask caskroom/homebrew-versions/java6
+require_cask mailbox
 
 # development browsers
 require_cask breach
