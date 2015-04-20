@@ -5,7 +5,7 @@ export ZSH=$HOME/.dotfiles/oh-my-zsh
 # Look in $ZSH/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-export ZSH_THEME="pygmalion"
+export ZSH_THEME="ys"
 #export ZSH_THEME="random"
 
 # Set to this to use case-sensitive completion
@@ -26,7 +26,8 @@ plugins=(git brew github osx rvm compleat dirpersist gem git-flow ssh-agent clou
 
 source $ZSH/oh-my-zsh.sh
 
-source ~/.nvm/nvm.sh
+#source ~/.nvm/nvm.sh
+source $(brew --prefix nvm)/nvm.sh
 
 # Customize to your needs...
 unsetopt correct
