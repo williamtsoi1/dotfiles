@@ -108,9 +108,9 @@ require_brew gnu-sed --default-names
 require_brew homebrew/dupes/grep
 require_brew hub
 require_brew imagemagick
-require_brew imagesnap
+#require_brew imagesnap
 # jq is a JSON grep
-require_brew jq
+#require_brew jq
 # http://maven.apache.org/
 require_brew maven
 require_brew memcached
@@ -167,7 +167,7 @@ require_cask iterm2
 require_cask sizeup
 #require_cask simple-comic
 #require_cask sketchup
-#require_cask sublime-text
+require_cask sublime-text
 require_cask the-unarchiver
 #require_cask transmission
 require_cask vlc
@@ -184,14 +184,14 @@ require_cask steam
 require_cask utorrent
 # needed by webstorm. Old Java version?
 require_cask caskroom/homebrew-versions/java6
-require_cask mailbox
+# require_cask mailbox
 
 # development browsers
-require_cask breach
+# require_cask breach
 require_cask firefox
 #require_cask firefox-aurora
 require_cask google-chrome
-require_cask google-chrome-canary
+# require_cask google-chrome-canary
 require_cask torbrowser
 
 # virtal machines
