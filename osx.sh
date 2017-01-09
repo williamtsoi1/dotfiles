@@ -140,68 +140,65 @@ bot "installing GUI tools via homebrew casks..."
 brew tap caskroom/versions > /dev/null 2>&1
 
 # cloud storage
-#require_cask amazon-cloud-drive
-#require_cask box-sync
 require_cask dropbox
 require_cask google-drive
 require_cask evernote
-#require_cask skydrive
 
 # communication
-#require_cask adium
 require_cask slack
-require_cask hipchat
 require_cask telegram
 require_cask skype
+require_cask whatsie
 
 # tools
-#require_cask comicbooklover
-require_cask diffmerge
-#require_cask flash-player
-#require_cask github
+require_cask 1password
+require_cask controlplane
+require_cask fliqlo
+require_cask flux
+require_cask geektool
 require_cask gpgtools
-#require_cask ireadfast
 require_cask iterm2
-#require_cask lastpass
-#require_cask macvim
 require_cask sizeup
-#require_cask simple-comic
-#require_cask sketchup
-require_cask sublime-text
 require_cask the-unarchiver
-#require_cask transmission
-require_cask vlc
+require_cask teamviewer
+require_cask tunnelblick
+require_cask utorrent
+require_cask vyprvpn
 require_cask xquartz
 
-# William's mods
-require_cask atom
-require_cask 1password
-require_cask sourcetree
+# Multimedia
+require_cask vlc
 require_cask spotify
 require_cask spotify-notifications
+
+# Dev tools
+require_cask atom
+require_cask gitkraken
+require_cask insomnia
+require_cask p4merge
+require_cask xamarin-studio
+
+# Dev tools (JetBrains)
+require_cask appcode
+require_cask intellij-idea
+require_cask rubymine
 require_cask webstorm
+require_cask datagrip
+require_cask pycharm
+
+# Gaming
 require_cask steam
-require_cask utorrent
-# needed by webstorm. Old Java version?
-require_cask caskroom/homebrew-versions/java6
-# require_cask mailbox
+require_cask battle-net
 
-# development browsers
-# require_cask breach
+# Browsers
 require_cask firefox
-#require_cask firefox-aurora
 require_cask google-chrome
-# require_cask google-chrome-canary
-require_cask torbrowser
 
-# virtal machines
+# virtal machines / DevOps
+require_cask docker
 require_cask virtualbox
 require_cask vmware-fusion
-
-# chef-dk, berkshelf, etc
-require_cask chefdk
-# vagrant for running dev environments using docker images
-require_cask vagrant # # | grep Caskroom | sed "s/.*'\(.*\)'.*/open \1\/Vagrant.pkg/g" | sh
+require_cask vagrant
 
 bot "Alright, cleaning up homebrew cache..."
 # Remove outdated versions from the cellar
