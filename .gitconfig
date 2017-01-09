@@ -164,7 +164,7 @@
 	prompt = false
 [diff]
 	#tool = myaraxis
-	tool = diffmerge
+	tool = p4merge
 [init]
     templatedir = ~/.dotfiles/.git_template
 [mergetool]
@@ -177,7 +177,7 @@
 	trustExitCode = true
 
 [merge]
-	tool = diffmerge
+	tool = p4merge
 	# Always show a diffstat at the end of a merge
 	stat = true
 
@@ -201,9 +201,3 @@
 	clean = git lfs clean %f
 	smudge = git lfs smudge %f
 	required = true
-[difftool "sourcetree"]
-	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path = 
-[mergetool "sourcetree"]
-	cmd = /opt/homebrew-cask/Caskroom/sourcetree/2.0.5.2/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
-	trustExitCode = true
