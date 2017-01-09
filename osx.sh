@@ -158,7 +158,6 @@ require_cask evernote
 require_cask slack
 require_cask telegram
 require_cask skype
-require_cask whatsie
 
 # tools
 require_cask 1password
