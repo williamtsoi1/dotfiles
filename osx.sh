@@ -78,23 +78,15 @@ require_brew findutils
 
 # Install other useful binaries
 require_brew ack
-# Beanstalk http://kr.github.io/beanstalkd/
-#require_brew beanstalkd
-# ln -sfv /usr/local/opt/beanstalk/*.plist ~/Library/LaunchAgents
-# launchctl load ~/Library/LaunchAgents/homebrew.mxcl.beanstalk.plist
-
-# docker setup:
-require_brew fig
-require_brew docker
-require_brew boot2docker
+require_brew aria2
+require_brew awscli
+require_brew dnsmasq
 
 # dos2unix converts windows newlines to unix newlines
 require_brew dos2unix
 # fortune command--I source this as a better motd :)
 require_brew fortune
 require_brew gawk
-# http://www.lcdf.org/gifsicle/ (because I'm a gif junky)
-require_brew gifsicle
 # skip those GUI clients, git command-line all the way
 require_brew git
 # yes, yes, use git-flow, please :)
@@ -104,22 +96,40 @@ require_brew gnupg
 # Install GNU `sed`, overwriting the built-in `sed`
 # so we can do "sed -i 's/foo/bar/' file" instead of "sed -i '' 's/foo/bar/' file"
 require_brew gnu-sed --default-names
+require_brew go
+require_brew graphviz
 # better, more recent grep
 require_brew homebrew/dupes/grep
+require_brew htop-osx
 require_brew hub
 require_brew imagemagick
 #require_brew imagesnap
 # jq is a JSON grep
-#require_brew jq
+require_brew jq
 # http://maven.apache.org/
+require_brew kops
+require_brew kubernetes-cli
+require_brew lynx
 require_brew maven
 require_brew memcached
+require_brew netcat
 require_brew nmap
 require_brew node
+require_brew nvm
+require_brew openssh
+require_brew openssl
+require_brew packer
+require_brew perl
+require_brew python
+require_brew rbenv
+require_brew ruby
 require_brew redis
 # better/more recent version of screen
 require_brew homebrew/dupes/screen
+require_brew screenfetch
+require_brew terraform
 require_brew tig
+require_brew tmux
 require_brew tree
 require_brew ttyrec
 # better, more recent vim
@@ -289,9 +299,9 @@ sudo chflags uchg /Private/var/vm/sleepimage;ok
 running "Set a custom wallpaper image"
 # `DefaultDesktop.jpg` is already a symlink, and
 # all wallpapers are in `/Library/Desktop Pictures/`. The default is `Wave.jpg`.
-rm -rf ~/Library/Application Support/Dock/desktoppicture.db
-sudo rm -rf /System/Library/CoreServices/DefaultDesktop.jpg
-sudo ln -s ~/.dotfiles/img/wallpaper.jpg /System/Library/CoreServices/DefaultDesktop.jpg;ok
+# rm -rf ~/Library/Application Support/Dock/desktoppicture.db
+# sudo rm -rf /System/Library/CoreServices/DefaultDesktop.jpg
+# sudo ln -s ~/.dotfiles/img/wallpaper.jpg /System/Library/CoreServices/DefaultDesktop.jpg;ok
 
 
 ################################################
@@ -863,11 +873,11 @@ running "Don’t show the preferences window on next start"
 defaults write com.irradiatedsoftware.SizeUp ShowPrefsOnNextStart -bool false;ok
 
 ###############################################################################
-bot "Sublime Text"
+#bot "Sublime Text"
 ###############################################################################
 
-running "Install Sublime Text settings"
-cp -r configs/Preferences.sublime-settings ~/Library/Application\ Support/Sublime\ Text*/Packages/User/Preferences.sublime-settings 2> /dev/null;ok
+#running "Install Sublime Text settings"
+#cp -r configs/Preferences.sublime-settings ~/Library/Application\ Support/Sublime\ Text*/Packages/User/Preferences.sublime-settings 2> /dev/null;ok
 
 ###############################################################################
 bot "NPM Globals..."
